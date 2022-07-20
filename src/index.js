@@ -1,3 +1,4 @@
-import greet from "./script"
+import greet from './script';
+import './style.css';
 
-greet("Hello Leaderboard");
+greet('Hello Leaderboard');
