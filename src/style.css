@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 40px;
+  margin: 30px 5%;
+}
+
+h2 {
+  margin: 30px auto;
+}
+
+.main-content-container {
+  display: grid;
+  grid-gap: 100px;
+  width: 80%;
+  margin: 50px auto;
+  grid-template-columns: 1fr 1fr;
+}
+
+.recent-score-header {
+  display: inline;
+}
+
+button[type=button] {
+  font-size: 20px;
+  font-weight: 500;
+  border: 2px solid black;
+  border-radius: 2px 6px 5px 4px;
+  box-shadow: 3px 3px 5px;
+  padding: 5px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border: 3px solid black;
+  border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+}
+
+tr {
+  height: 30px;
+  font-size: 18px;
+}
+
+td:nth-child(odd) {
+  padding-left: 20px;
+}
+
+td:nth-child(even) {
+  width: 40%;
+  text-align: center;
+}
+
+tr:nth-child(odd) {
+  background-color: lightgray;
+}
+
+/* styling the add score portion */
+input[type="text"] {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 30px;
+  border: 2px solid black;
+}
+
+.submit-btn-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+button[type="submit"] {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 5px;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .main-content-container {
+    grid-template-columns: 1fr;
+  }
+}
