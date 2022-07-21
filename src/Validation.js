@@ -1,3 +1,23 @@
+import { displayError } from "./EventHandlers";
+
+// check if username already added
+const userDoNotExist = (existingUsers, user) => {
+    let isUserExist;
+    
+    existingUsers.forEach(existingUser => {
+        console.log(existingUser, user)
+        if (existingUser.user === user) {
+            displayError("Username already exit");
+            isUserExist = true
+            return
+        }
+    });
+    if (isUserExist) {
+        return false
+    }else{
+        return true
+    }
+}
 
 /* Regular expression to test username
 
@@ -25,5 +45,5 @@ const testUsername = (username) => {
 }
 
 export {
-    testUsername
+    testUsername, userDoNotExist
 }
