@@ -1,23 +1,19 @@
-import { displayError } from "./EventHandlers";
+import { displayError } from './EventHandlers';
 
 // check if username already added
 const userDoNotExist = (existingUsers, user) => {
-    let isUserExist;
-    
-    existingUsers.forEach(existingUser => {
-        console.log(existingUser, user)
-        if (existingUser.user === user) {
-            displayError("Username already exit");
-            isUserExist = true
-            return
-        }
-    });
-    if (isUserExist) {
-        return false
-    }else{
-        return true
+  let isUserExist;
+  existingUsers.forEach((existingUser) => {
+    if (existingUser.user === user) {
+      displayError('Username already exit');
+      isUserExist = true;
     }
-}
+  });
+  if (isUserExist) {
+    return false;
+  }
+  return true;
+};
 
 /* Regular expression to test username
 
@@ -35,15 +31,14 @@ const userDoNotExist = (existingUsers, user) => {
 */
 
 const testUsername = (username) => {
-    const regExp = /^(?![0-9])(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/
-    if(!regExp.test(username)){
-        displayError("Invalid Username");
-        return false;
-    } else {
-        return true;
-    }
-}
+  const regExp = /^(?![0-9])(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
+  if (!regExp.test(username)) {
+    displayError('Invalid Username');
+    return false;
+  }
+  return true;
+};
 
 export {
-    testUsername, userDoNotExist
-}
+  testUsername, userDoNotExist,
+};
