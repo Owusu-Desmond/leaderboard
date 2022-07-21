@@ -14,4 +14,20 @@ const displayError = (message) => {
     }, 5000)
 }
 
-export { clearForm, displayError}
+// add data to table
+const addData = (existingUser) => {
+    const table = document.querySelector('table');
+    const tr = document.createElement('tr');
+    const trContent = `<td>${existingUser.user}</td><td>${existingUser.score}</td>`
+    tr.innerHTML = trContent;
+    table.appendChild(tr);
+}
+
+// loop through existing users from api and add to the table
+const renderAPI = (existingUsers) => {
+    existingUsers.forEach(existingUser => {
+        addData(existingUser);
+    });
+}
+
+export { clearForm, displayError, renderAPI}
