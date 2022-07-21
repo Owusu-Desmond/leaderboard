@@ -11,6 +11,11 @@ const getScores = async (API_URL) => {
     const result = await response.json();
     return await result.result;
 }
+// render data when page loads
+document.addEventListener('DOMContentLoaded', async () => {
+    const existingUsers = await getScores(API_URL);
+    renderAPI(existingUsers)
+})
 
 form.onsubmit = async (event) => {
     event.preventDefault();
