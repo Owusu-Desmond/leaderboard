@@ -51,8 +51,8 @@ form.onsubmit = async (event) => {
 const refresh = document.getElementById('refresh');
 refresh.onclick = async () => {
   // remove all already added to UI first to prevent data repeatition
-  const allAddData = document.querySelectorAll('tr');
-  allAddData.forEach((addData) => {
+  const allAddedData = document.querySelectorAll('table>tr');
+  allAddedData.forEach((addData) => {
     addData.remove();
   });
   // load new data
