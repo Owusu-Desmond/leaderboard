@@ -66,7 +66,7 @@ tr:nth-child(odd) {
 }
 
 /* styling the add score portion */
-input[type="text"] {
+input {
   font-size: 20px;
   font-weight: 500;
   padding: 10px;
@@ -86,6 +86,20 @@ button[type="submit"] {
   padding: 5px;
   border: 2px solid black;
   cursor: pointer;
+}
+
+.message {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.message.error-message {
+  color: #f00;
+}
+
+.message.success-message {
+  color: #080;
 }
 
 @media screen and (max-width: 768px) {
