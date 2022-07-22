@@ -10,8 +10,24 @@ body {
 
 h1 {
   font-weight: 800;
-  font-size: 40px;
-  margin: 30px 5%;
+  font-size: 35px;
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: lightgray;
+}
+
+p {
+  font-size: 23px;
+}
+
+p.description {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+p.text {
+  margin: 30px auto;
 }
 
 h2 {
@@ -92,6 +108,7 @@ button[type="submit"] {
   font-size: 20px;
   text-align: center;
   font-weight: 600;
+  margin: 20px auto;
 }
 
 .message.error-message {
@@ -102,8 +119,24 @@ button[type="submit"] {
   color: #080;
 }
 
+footer {
+  background-color: #393737;
+  color: #fff;
+  padding: 30px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
 @media screen and (max-width: 768px) {
   .main-content-container {
     grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 18px;
   }
 }
