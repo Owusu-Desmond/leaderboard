@@ -22,9 +22,13 @@ const addData = (existingUser) => {
   tr.innerHTML = trContent;
   table.appendChild(tr);
 };
-
+const sortScore = (existingUsers) => {
+  existingUsers.sort((a, b) => b.score - a.score);
+  return existingUsers;
+};
 // loop through existing users from api and add to the table
 const renderAPI = (existingUsers) => {
+  existingUsers = sortScore(existingUsers);
   existingUsers.forEach((existingUser) => {
     addData(existingUser);
   });
