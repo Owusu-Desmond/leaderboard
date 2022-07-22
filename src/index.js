@@ -27,7 +27,7 @@ form.onsubmit = async (event) => {
   };
   const existingUsers = await getScores(API_URL);
   // stop executing if there is an error
-  if (!userDoNotExist(existingUsers, userData.user) && testUsername(userData.user)) {
+  if (!testUsername(userData.user) || !userDoNotExist(existingUsers, userData.user)) {
     return;
   }
   // continue adding user when there is no validation error
