@@ -17,7 +17,7 @@ const userDoNotExist = (existingUsers, user) => {
 
 /* Regular expression to test username
 
-^ (?![0-9]) (?![_.]) (?!.*[_.]{2}) [a-zA-Z0-9._ ]+(?<![_.])$
+^ (?![0-9]) (?![_.]) (?!.*[_.]{2}) [a-zA-Z0-9._\- ]+(?<![_.])$
  └─────┬───┘└───┬──┘ └─────┬─────┘ └─────┬─────┘ └───┬───┘
        │         │         │             │           no _ or . at the end
        │         │         │             │
@@ -31,12 +31,12 @@ const userDoNotExist = (existingUsers, user) => {
 */
 
 const testUsername = (username) => {
-  const regExp = /^(?![0-9])(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
-  if (!regExp.test(username)) {
-    displayError('Invalid Username');
-    return false;
+  const regExp = /^(?![0-9])(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._\- ]+(?<![_.])$/;
+  if (regExp.test(username)) {
+    return true;
   }
-  return true;
+  displayError('Invalid Username');
+  return false;
 };
 
 export {
